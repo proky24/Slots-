@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎰Slots🎰</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delius&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+</head>
+
+    <body>
+
+        <!--container for everything on the page-->
+        <div class="container">
+
+            <!--cards meaning the slots-->
+            <div class="cards">
+
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+
+            </div>
+
+            <div class="stuff">
+                
+                <!--pretty selfexplenetory-->
+                <button onclick="spinAll()" class="spin">Spin</button>
+                <button class="bet">Bet</button>
+                <p class="ballance"></p>
+                <p class="betMoney"></p>
+                <p class="win"></p>
+
+            </div>
+
+            <div class="debt">
+                <h2>Loosing your money?</h2>
+                <p>Don't worry nothing like that exist in the gamble industry</p>
+                <p>Let us help you by giving a loan</p>
+
+                <form action="" method="POST">
+                    <label for="sum">How much money do you need?</label>
+                    <input type="text" placeholder="999 999">
+
+                    <input type="submit" value="💸">
+                </form>
+            </div>
+        </div>
+
+    </body>
+
+    <script src="index.js"></script>
+
+</html>
