@@ -11,13 +11,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Delius&family=Edu+AU+VIC+WA+NT+Arrows:wght@400..700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 </head>
 
-    <body>
+    <body id="body">
+        <div class="pirat"></div>
 
         <!--container for everything on the page-->
         <div class="container">
 
+            <div id="win">
+                <h1 id="winText">YOU WIN!</h1>
+                <h4 id="combo"></h4>
+                <button id="cross">❌</button>
+            </div>
+
+
+            <div class="header">
+                <h1>💸🎰Slots🎰💸</h1>
+            </div>
+
             <!--cards meaning the slots-->
-            <div class="cards">
+            <div class="cards" id="cards">
 
                 <div class="card"></div>
                 <div class="card"></div>
@@ -27,26 +39,56 @@
 
             <div class="stuff">
                 
+                
                 <!--pretty selfexplenetory-->
-                <button onclick="spinAll()" class="spin">Spin</button>
-                <button class="bet">Bet</button>
-                <p class="ballance"></p>
-                <p class="betMoney"></p>
-                <p class="win"></p>
+                <div class="spinContainer">
+                    <button onclick="spinAll()" class="spin">Spin</button>
+                </div>
+                
+                <div class="betContainer">
+
+                    <label for="">Bet</label>
+                    <div class="right">
+
+                        <button id="bet">+</button>
+                        <button id="lower">-</button>
+                        <button id="allIn">🤑All in🤑</button>
+
+                    </div>
+                    
+                </div>
+
+                <div class="ballanceContainer">
+
+                    <p class="ballance" id="ballance"></p>
+                    <p class="betMoney" id="betMoney"></p>
+
+                </div>
 
             </div>
 
-            <div class="debt">
-                <h2>Loosing your money?</h2>
-                <p>Don't worry nothing like that exist in the gamble industry</p>
-                <p>Let us help you by giving a loan</p>
+            <div class="debt" id="debt">
 
-                <form action="" method="POST">
-                    <label for="sum">How much money do you need?</label>
-                    <input type="text" placeholder="999 999">
+                <div class="text">
 
-                    <input type="submit" value="💸">
-                </form>
+                    <h2>Loosing your money?</h2>
+                    <p>Don't worry nothing like that exist in the gamble industry</p>
+                    <p>Let us help you by giving a loan</p>
+
+                </div>
+
+                    <div class="label">
+
+                        <label for="sum">How much money do you need?</label><br>
+                        <input type="text" placeholder="999 999" name="sum" id="sum"><br><br>
+
+                    </div>
+
+                    <div class="button">
+
+                        <button type="submit" id="submit">💸Get Cash💸</button>
+
+                    </div>
             </div>
         </div>
 
