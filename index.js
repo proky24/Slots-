@@ -28,25 +28,37 @@ const win = document.getElementById("win");
 const combo = document.getElementById("combo");
 const cross = document.getElementById("cross");
 const allIn = document.getElementById("allIn");
-const message = document.getElementById("message");
 const messageContainer = document.getElementById("snackbar");
+const audioBtn = document.getElementById("audio");
 
 body.addEventListener("keydown", (e) => {
-    if(e.code === "Space" || e.key === "Enter"){
+    if(e.key === "Enter"){
         spinAll();
-        console.log(e.key)
     }
 })
 
 p.innerHTML = `Current balance:<span style="color:green;"> ${ballance}$</span>`;
 betMoney.innerHTML = `Current bet:<span style="color:green;"> ${bet}$</span>`;
 
-let backgroudMusic = new Audio('jazz.mp3');
+const backgroudMusic = new Audio('jazz.mp3');
+const slotAudio = new Audio('slotserunato.mp3');
+
 
 backgroudMusic.play();
 backgroudMusic.loop = true;
-backgroudMusic.volume = 0.1;
+backgroudMusic.volume = 0.3;
 
+function audio() {
+    if(backgroudMusic.volume === 0) {
+        backgroudMusic.volume = 0.3;
+        slotAudio.volume = 0.5;
+        audioBtn.innerHTML = "🔊";
+    } else {
+        backgroudMusic.volume = 0;
+        slotAudio.volume = 0;
+        audioBtn.innerHTML = "🔇";
+    }
+}
 
 function spin(card, offset) {
 
@@ -72,8 +84,7 @@ function spinAll() {
     /*  messageContainer.style.visibility = 'hidden';
     message.innerHTML = ""; */
     const cardsList = document.querySelectorAll(".cards > .card");
-    const audio = new Audio('slotserunato.mp3');
-    audio.play();
+    slotAudio.play();
     backgroudMusic.pause();
 
     cards.classList.add("casino-background");
@@ -226,6 +237,7 @@ function checkWin() {
         ballance -= bet;
         document.getElementById("ballance").innerHTML = `Current balance:<span style="color:green;"> ${ballance}$</span>`;
         checkBallance();
+        console.log('checked ballance')
     }
     wins = [];
 }
@@ -237,20 +249,23 @@ function checkBallance() {
         setTimeout(() => {
             
             document.getElementById("debt").style.visibility = 'visible';
+            console.log('debt showed')
             
         }, 1200)
         return true;
     } else {
         document.getElementById("debt").style.visibility = 'hidden';
+        console.log('debt not showed')
+
         return false;
     }
 }
 
 button.addEventListener("click", () => {
+    bet += 100; 
     if(bet === ballance) {
         return;
     } else {
-        bet += 100; 
         betMoney.innerHTML = `Current bet:<span style="color:green;"> ${bet}$</span>`;
         if(!checkBallance()) {
             ballance -= 100; p.innerHTML = `Current balance:<span style="color:green;"> ${ballance}$</span`;
@@ -263,7 +278,9 @@ lower.addEventListener("click", () => {
         bet -=100;
         betMoney.innerHTML = `Current bet:<span style="color:green;"> ${bet}$</span>`;
         p.innerHTML = `Current balance:<span style="color:green;"> ${ballance}$</span`;
-    } else {
+    } if(bet === 100){
+        return;
+    }else {
         bet -= 100;
         ballance += 100;         
         betMoney.innerHTML = `Current bet:<span style="color:green;"> ${bet}$</span>`;
@@ -272,13 +289,12 @@ lower.addEventListener("click", () => {
 });
 
 submit.addEventListener("click", () => {
-    console.log(document.getElementById("sum").value);  
     ballance += parseInt(document.getElementById("sum").value); 
     p.innerHTML = `Current balance:<span style="color:green;"> ${ballance}$</span>`; 
     bet = 100;
     betMoney.innerHTML = `Current bet:<span style="color:green;"> ${bet}$</span`;
     document.getElementById("sum").value = "";
-    document.getElementById("debt").style.display = 'none'; 
+    document.getElementById("debt").style.visibility = 'hidden'; 
 });
 
 cross.addEventListener("click", () => {win.style.visibility = 'hidden';});
