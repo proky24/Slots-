@@ -28,6 +28,8 @@ const win = document.getElementById("win");
 const combo = document.getElementById("combo");
 const cross = document.getElementById("cross");
 const allIn = document.getElementById("allIn");
+const message = document.getElementById("message");
+const messageContainer = document.getElementById("snackbar");
 
 body.addEventListener("keydown", (e) => {
     if(e.code === "Space" || e.key === "Enter"){
@@ -67,6 +69,8 @@ function spin(card, offset) {
 }
 
 function spinAll() {
+    /*  messageContainer.style.visibility = 'hidden';
+    message.innerHTML = ""; */
     const cardsList = document.querySelectorAll(".cards > .card");
     const audio = new Audio('slotserunato.mp3');
     audio.play();
@@ -95,46 +99,133 @@ function checkWin() {
     const win = wins[0] === wins[1] && wins[1] === wins[2];
     if (win) {
         if (wins[0] === "seven") {
-            ballance += bet * 10;
-            document.getElementById("win").style.visibility = 'visible';
-            combo.innerHTML = "10x Combo❗";
+            const moneyWin = bet * 10;
+            ballance += moneyWin;
+            messageContainer.innerHTML = `You won <span style="color:green;">${bet}$</span>`;
+            messageContainer.className = "show";
+            setTimeout(function(){ messageContainer.className = messageContainer.className.replace("show", ""); }, 1500);
+            setTimeout(() => {
+                messageContainer.style.visibility = 'hidden';
+                messageContainer.innerHTML = "";
+                document.getElementById("win").style.visibility = 'visible';
+                combo.innerHTML = "10x Combo❗";
+
+            }, 1000)
         } else if (wins[0] === "banana") {
-            ballance += bet * 5;
-            combo.innerHTML = "5x Combo❗";
-            document.getElementById("win").style.visibility = 'visible';
+            const moneyWin = bet * 5;
+            ballance += moneyWin;
+            messageContainer.innerHTML = `You won <span style="color:green;">${bet}$</span>`;
+            messageContainer.className = "show";
+            setTimeout(function(){ messageContainer.className = messageContainer.className.replace("show", ""); }, 1500);
+            setTimeout(() => {
+                messageContainer.style.visibility = 'hidden';
+                messageContainer.innerHTML = "";
+                combo.innerHTML = "5x Combo❗";
+                document.getElementById("win").style.visibility = 'visible';
+
+            }, 1000)
         } else if (wins[0] === "cherry") {
-            ballance += bet * 3;
-            combo.innerHTML = "3x Combo❗";
-            document.getElementById("win").style.visibility = 'visible';
+            const moneyWin = bet * 3;
+            ballance += moneyWin;
+            messageContainer.innerHTML = `You won <span style="color:green;">${bet}$</span>`;
+            messageContainer.className = "show";
+            setTimeout(function(){ messageContainer.className = messageContainer.className.replace("show", ""); }, 1500);
+            setTimeout(() => {
+                messageContainer.style.visibility = 'hidden';
+                messageContainer.innerHTML = "";
+                combo.innerHTML = "3x Combo❗";
+                document.getElementById("win").style.visibility = 'visible';
+
+            }, 1000)
         } else if (wins[0] === "plum") {
-            ballance += bet * 2;
-            combo.innerHTML = "2x Combo❗";
-            document.getElementById("win").style.visibility = 'visible';
+            const moneyWin = bet * 2;
+            ballance += moneyWin;
+            messageContainer.innerHTML = `You won <span style="color:green;">${bet}$</span>`;
+            messageContainer.className = "show";
+            setTimeout(function(){ messageContainer.className = messageContainer.className.replace("show", ""); }, 1500);
+            setTimeout(() => {
+                messageContainer.style.visibility = 'hidden';
+                messageContainer.innerHTML = "";
+                combo.innerHTML = "2x Combo❗";
+                document.getElementById("win").style.visibility = 'visible';
+
+            }, 1000)
         } else if (wins[0] === "orange") {
-            ballance += bet * 2;
-            combo.innerHTML = "2x Combo❗";
-            document.getElementById("win").style.visibility = 'visible';
+            const moneyWin = bet * 2;
+            ballance += moneyWin;
+            messageContainer.innerHTML = `You won <span style="color:green;">${bet}$</span>`;
+            messageContainer.className = "show";
+            setTimeout(function(){ messageContainer.className = messageContainer.className.replace("show", ""); }, 1500);
+            setTimeout(() => {
+                messageContainer.style.visibility = 'hidden';
+                messageContainer.innerHTML = "";
+                combo.innerHTML = "2x Combo❗";
+                document.getElementById("win").style.visibility = 'visible';
+
+            }, 1000)
         } else if (wins[0] === "bell") {
-            ballance += bet * 2;
-            combo.innerHTML = "2x Combo❗";
-            document.getElementById("win").style.visibility = 'visible';
+            const moneyWin = bet * 2;
+            ballance += moneyWin;
+            messageContainer.innerHTML = `You won <span style="color:green;">${bet}$</span>`;
+            messageContainer.className = "show";
+            setTimeout(function(){ messageContainer.className = messageContainer.className.replace("show", ""); }, 1500);
+            setTimeout(() => {
+                messageContainer.style.visibility = 'hidden';
+                messageContainer.innerHTML = "";
+                combo.innerHTML = "2x Combo❗";
+                document.getElementById("win").style.visibility = 'visible';
+
+            }, 1000)
         } else if (wins[0] === "bar") {
-            ballance += bet * 2;
-            combo.innerHTML = "2x Combo❗";
-            document.getElementById("win").style.visibility = 'visible';
+            const moneyWin = bet * 2;
+            ballance += moneyWin;
+            messageContainer.innerHTML = `You won <span style="color:green;">${bet}$</span>`;
+            messageContainer.className = "show";
+            setTimeout(function(){ messageContainer.className = messageContainer.className.replace("show", ""); }, 1500);
+            setTimeout(() => {
+                messageContainer.style.visibility = 'hidden';
+                messageContainer.innerHTML = "";
+                combo.innerHTML = "2x Combo❗";
+                document.getElementById("win").style.visibility = 'visible';
+
+            }, 1000)
         } else if (wins[0] === "lemon") {
-            ballance += bet * 2;
-            combo.innerHTML = "2x Combo❗";
-            document.getElementById("win").style.visibility = 'visible';
+            const moneyWin = bet * 2;
+            ballance += moneyWin;
+            messageContainer.innerHTML = `You won <span style="color:green;">${bet}$</span>`;
+            messageContainer.className = "show";
+            setTimeout(function(){ messageContainer.className = messageContainer.className.replace("show", ""); }, 1500);
+            setTimeout(() => {
+                messageContainer.style.visibility = 'hidden';
+                messageContainer.innerHTML = "";
+                combo.innerHTML = "2x Combo❗";
+                document.getElementById("win").style.visibility = 'visible';
+
+            }, 1000)
         } else if (wins[0] === "melon") {
-            ballance += bet * 2;
-            combo.innerHTML = "2x Combo❗";
-            document.getElementById("win").style.visibility = 'visible';
+            const moneyWin = bet * 2;
+            ballance += moneyWin;
+            messageContainer.innerHTML = `You won <span style="color:green;">${bet}$</span>`;
+            messageContainer.className = "show";
+            setTimeout(function(){ messageContainer.className = messageContainer.className.replace("show", ""); }, 1500);
+            setTimeout(() => {
+                messageContainer.style.visibility = 'hidden';
+                messageContainer.innerHTML = "";
+                combo.innerHTML = "2x Combo❗";
+                document.getElementById("win").style.visibility = 'visible';
+
+            }, 1000)
         }
         document.getElementById("ballance").innerHTML = `Current balance:<span style="color:green;"> ${ballance}$</span>`;
     } else {
+        /*messageContainer.style.visibility = 'visible';
+        message.innerHTML = `You lost <span style="color:red;">${bet}$</span>`;*/
+        messageContainer.innerHTML = `You lost <span style="color:red;">${bet}$</span>`;
+        messageContainer.className = "show";
+        setTimeout(function(){ messageContainer.className = messageContainer.className.replace("show", ""); }, 1500);
         ballance -= bet;
         document.getElementById("ballance").innerHTML = `Current balance:<span style="color:green;"> ${ballance}$</span>`;
+        checkBallance();
     }
     wins = [];
 }
@@ -142,10 +233,16 @@ function checkWin() {
 
 function checkBallance() {
     if(ballance <= 0){
-        document.getElementById("debt").style.visibility = 'visible';
         p.innerHTML = `Current balance:<span style="color:red;"> ${ballance}$</span>`;
+        setTimeout(() => {
+            
+            document.getElementById("debt").style.visibility = 'visible';
+            
+        }, 1200)
+        return true;
     } else {
         document.getElementById("debt").style.visibility = 'hidden';
+        return false;
     }
 }
 
@@ -155,7 +252,9 @@ button.addEventListener("click", () => {
     } else {
         bet += 100; 
         betMoney.innerHTML = `Current bet:<span style="color:green;"> ${bet}$</span>`;
-        ballance -= 100; p.innerHTML = `Current balance:<span style="color:green;"> ${ballance}$</span`;
+        if(!checkBallance()) {
+            ballance -= 100; p.innerHTML = `Current balance:<span style="color:green;"> ${ballance}$</span`;
+        }
     }
 });
 
@@ -171,7 +270,16 @@ lower.addEventListener("click", () => {
         p.innerHTML = `Current balance:<span style="color:green;"> ${ballance}$</span`;
     }
 });
-submit.addEventListener("click", () => {console.log(document.getElementById("sum").value);  ballance += parseInt(document.getElementById("sum").value); p.innerHTML = `Current balance:<span style="color:green;"> ${ballance}$</span>`; document.getElementById("sum").value = ""; document.getElementById("debt").style.display = 'none'; });
+
+submit.addEventListener("click", () => {
+    console.log(document.getElementById("sum").value);  
+    ballance += parseInt(document.getElementById("sum").value); 
+    p.innerHTML = `Current balance:<span style="color:green;"> ${ballance}$</span>`; 
+    bet = 100;
+    betMoney.innerHTML = `Current bet:<span style="color:green;"> ${bet}$</span`;
+    document.getElementById("sum").value = "";
+    document.getElementById("debt").style.display = 'none'; 
+});
 
 cross.addEventListener("click", () => {win.style.visibility = 'hidden';});
 
