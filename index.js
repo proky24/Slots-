@@ -112,9 +112,7 @@ function checkWin() {
         if (wins[0] === "seven") {
             const moneyWin = bet * 10;
             ballance += moneyWin;
-            messageContainer.innerHTML = `You won <span style="color:green;">${bet}$</span>`;
-            messageContainer.className = "show";
-            setTimeout(function(){ messageContainer.className = messageContainer.className.replace("show", ""); }, 1500);
+         
             setTimeout(() => {
                 messageContainer.style.visibility = 'hidden';
                 messageContainer.innerHTML = "";
@@ -122,12 +120,17 @@ function checkWin() {
                 combo.innerHTML = "10x Combo❗";
 
             }, 1000)
+
+            setTimeout(() => {
+                messageContainer.innerHTML = `You won <span style="color:green;">${bet}$</span>`;
+                messageContainer.className = "show";
+                setTimeout(function(){ messageContainer.className = messageContainer.className.replace("show", ""); }, 1500);
+
+            }, 1000)
         } else if (wins[0] === "banana") {
             const moneyWin = bet * 5;
             ballance += moneyWin;
-            messageContainer.innerHTML = `You won <span style="color:green;">${bet}$</span>`;
-            messageContainer.className = "show";
-            setTimeout(function(){ messageContainer.className = messageContainer.className.replace("show", ""); }, 1500);
+         
             setTimeout(() => {
                 messageContainer.style.visibility = 'hidden';
                 messageContainer.innerHTML = "";
@@ -135,12 +138,17 @@ function checkWin() {
                 document.getElementById("win").style.visibility = 'visible';
 
             }, 1000)
+
+            setTimeout(() => {
+                messageContainer.innerHTML = `You won <span style="color:green;">${bet}$</span>`;
+                messageContainer.className = "show";
+                setTimeout(function(){ messageContainer.className = messageContainer.className.replace("show", ""); }, 1500);
+
+            }, 1000)
         } else if (wins[0] === "cherry") {
             const moneyWin = bet * 3;
             ballance += moneyWin;
-            messageContainer.innerHTML = `You won <span style="color:green;">${bet}$</span>`;
-            messageContainer.className = "show";
-            setTimeout(function(){ messageContainer.className = messageContainer.className.replace("show", ""); }, 1500);
+         
             setTimeout(() => {
                 messageContainer.style.visibility = 'hidden';
                 messageContainer.innerHTML = "";
@@ -148,64 +156,89 @@ function checkWin() {
                 document.getElementById("win").style.visibility = 'visible';
 
             }, 1000)
+
+            setTimeout(() => {
+                messageContainer.innerHTML = `You won <span style="color:green;">${bet}$</span>`;
+                messageContainer.className = "show";
+                setTimeout(function(){ messageContainer.className = messageContainer.className.replace("show", ""); }, 1500);
+
+            }, 1000)
         } else if (wins[0] === "plum") {
             const moneyWin = bet * 2;
             ballance += moneyWin;
-            messageContainer.innerHTML = `You won <span style="color:green;">${bet}$</span>`;
-            messageContainer.className = "show";
-            setTimeout(function(){ messageContainer.className = messageContainer.className.replace("show", ""); }, 1500);
+         
             setTimeout(() => {
                 messageContainer.style.visibility = 'hidden';
                 messageContainer.innerHTML = "";
                 combo.innerHTML = "2x Combo❗";
                 document.getElementById("win").style.visibility = 'visible';
+
+            }, 1000)
+
+            setTimeout(() => {
+                messageContainer.innerHTML = `You won <span style="color:green;">${bet}$</span>`;
+                messageContainer.className = "show";
+                setTimeout(function(){ messageContainer.className = messageContainer.className.replace("show", ""); }, 1500);
 
             }, 1000)
         } else if (wins[0] === "orange") {
             const moneyWin = bet * 2;
             ballance += moneyWin;
-            messageContainer.innerHTML = `You won <span style="color:green;">${bet}$</span>`;
-            messageContainer.className = "show";
-            setTimeout(function(){ messageContainer.className = messageContainer.className.replace("show", ""); }, 1500);
+         
             setTimeout(() => {
                 messageContainer.style.visibility = 'hidden';
                 messageContainer.innerHTML = "";
                 combo.innerHTML = "2x Combo❗";
                 document.getElementById("win").style.visibility = 'visible';
+
+            }, 1000)
+
+            setTimeout(() => {
+                messageContainer.innerHTML = `You won <span style="color:green;">${bet}$</span>`;
+                messageContainer.className = "show";
+                setTimeout(function(){ messageContainer.className = messageContainer.className.replace("show", ""); }, 1500);
 
             }, 1000)
         } else if (wins[0] === "bell") {
             const moneyWin = bet * 2;
             ballance += moneyWin;
-            messageContainer.innerHTML = `You won <span style="color:green;">${bet}$</span>`;
-            messageContainer.className = "show";
-            setTimeout(function(){ messageContainer.className = messageContainer.className.replace("show", ""); }, 1500);
+         
             setTimeout(() => {
                 messageContainer.style.visibility = 'hidden';
                 messageContainer.innerHTML = "";
                 combo.innerHTML = "2x Combo❗";
                 document.getElementById("win").style.visibility = 'visible';
+
+            }, 1000)
+
+            setTimeout(() => {
+                messageContainer.innerHTML = `You won <span style="color:green;">${bet}$</span>`;
+                messageContainer.className = "show";
+                setTimeout(function(){ messageContainer.className = messageContainer.className.replace("show", ""); }, 1500);
 
             }, 1000)
         } else if (wins[0] === "bar") {
             const moneyWin = bet * 2;
             ballance += moneyWin;
-            messageContainer.innerHTML = `You won <span style="color:green;">${bet}$</span>`;
-            messageContainer.className = "show";
-            setTimeout(function(){ messageContainer.className = messageContainer.className.replace("show", ""); }, 1500);
+         
             setTimeout(() => {
                 messageContainer.style.visibility = 'hidden';
                 messageContainer.innerHTML = "";
                 combo.innerHTML = "2x Combo❗";
                 document.getElementById("win").style.visibility = 'visible';
+
+            }, 1000)
+
+            setTimeout(() => {
+                messageContainer.innerHTML = `You won <span style="color:green;">${bet}$</span>`;
+                messageContainer.className = "show";
+                setTimeout(function(){ messageContainer.className = messageContainer.className.replace("show", ""); }, 1500);
 
             }, 1000)
         } else if (wins[0] === "lemon") {
             const moneyWin = bet * 2;
             ballance += moneyWin;
-            messageContainer.innerHTML = `You won <span style="color:green;">${bet}$</span>`;
-            messageContainer.className = "show";
-            setTimeout(function(){ messageContainer.className = messageContainer.className.replace("show", ""); }, 1500);
+         
             setTimeout(() => {
                 messageContainer.style.visibility = 'hidden';
                 messageContainer.innerHTML = "";
@@ -213,17 +246,29 @@ function checkWin() {
                 document.getElementById("win").style.visibility = 'visible';
 
             }, 1000)
+
+            setTimeout(() => {
+                messageContainer.innerHTML = `You won <span style="color:green;">${bet}$</span>`;
+                messageContainer.className = "show";
+                setTimeout(function(){ messageContainer.className = messageContainer.className.replace("show", ""); }, 1500);
+
+            }, 1000)
         } else if (wins[0] === "melon") {
             const moneyWin = bet * 2;
             ballance += moneyWin;
-            messageContainer.innerHTML = `You won <span style="color:green;">${bet}$</span>`;
-            messageContainer.className = "show";
-            setTimeout(function(){ messageContainer.className = messageContainer.className.replace("show", ""); }, 1500);
+         
             setTimeout(() => {
                 messageContainer.style.visibility = 'hidden';
                 messageContainer.innerHTML = "";
                 combo.innerHTML = "2x Combo❗";
                 document.getElementById("win").style.visibility = 'visible';
+
+            }, 1000)
+
+            setTimeout(() => {
+                messageContainer.innerHTML = `You won <span style="color:green;">${bet}$</span>`;
+                messageContainer.className = "show";
+                setTimeout(function(){ messageContainer.className = messageContainer.className.replace("show", ""); }, 1500);
 
             }, 1000)
         }

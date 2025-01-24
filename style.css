@@ -112,6 +112,8 @@ p{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 8px;
+    padding: 8px;
     font-size: 48px;
     top: 0;
     bottom: 0;
@@ -291,4 +293,10 @@ input{
 @keyframes fadeout {
     from {top: 30px; opacity: 1;}
     to {top: 0; opacity: 0;}
+}
+
+@media (min-width: 150px) and (max-width: 549px) {
+    .debt{
+        font-size: 24px;
+    }
 }
