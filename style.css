@@ -164,6 +164,14 @@ input{
     
 }
 
+.Two{
+    background-position: 0 395px;
+}
+
+.Three{
+    background-position: 0 237px;
+}
+
 /*.message{
     visibility: hidden;
     position: absolute;
