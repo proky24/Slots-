@@ -17,7 +17,9 @@ const indexes = [0,0,0];
 let wins = [];
 let ballance = 10000;
 let bet = 100;
+let spinning = false;
 const button = document.getElementById("bet");
+const spinBtn = document.getElementById("spin");
 const betMoney = document.getElementById("betMoney");   
 const lower = document.getElementById("lower");
 const cards = document.getElementById("cards");
@@ -61,7 +63,9 @@ function audio() {
 }
 
 function spin(card, offset) {
-
+    spinning = true;
+    spinBtn.style.opacity = 0.5;
+    spinBtn.style.cursor = "not-allowed";
     const random = (offset + 2) * numIcons + Math.round(Math.random() * numIcons);
     const style = getComputedStyle(card);
         const backgroundPositionY = parseFloat(style["background-position-y"]);
@@ -81,6 +85,9 @@ function spin(card, offset) {
 }
 
 function spinAll() {
+    if (spinning) {
+        return;
+    }
     /*  messageContainer.style.visibility = 'hidden';
     message.innerHTML = ""; */
     const cardsList = document.querySelectorAll(".cards > .card");
@@ -103,7 +110,10 @@ function spinAll() {
 
         .then(() => checkWin())
         .then(() => checkBallance())
-        .then(() => backgroudMusic.play());
+        .then(() => backgroudMusic.play())
+        .then(() => spinning = false)
+        .then(() => spinBtn.style.opacity = 1)
+        .then(() => spinBtn.style.cursor = "pointer");
 }
 
 function checkWin() {
